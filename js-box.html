@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;height: 2000px;}
+			#login{
+				width: 400px;height: 200px;border:1px solid #000;position: absolute;left: 0;top: 0;font-size: 50px;
+			display: none;background: #fff;
+			}
+			span{width: 50px;height: 50px;background: blue;position: absolute;text-align: center;line-height: 50px;right: 0;top: 0;}
+			#mask{width: 100%;height: 100%;position: absolute;left: 0;top: 0;opacity: .5;}
+			input{position: relative;z-index: 2;width: 100px;height: 50px;}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload = function (){
+			  	var login = $('#login');
+			  	var mask = $('#mask');
+			  	var btn = $('input')[0];
+			  	var span = $('span')[0];
+			  	btn.onclick = function (){
+			  		login.style.zIndex = 2;
+			  		login.style.display = 'block';
+			  		this.style.zIndex = -1;
+			  	  	login.style.left = ( viewWH().w - login.offsetWidth ) / 2  + 'px';
+			  		login.style.top = ( viewWH().h - login.offsetHeight ) / 2  + 'px';
+				  	window.onscroll = function (){
+				  		login.style.top = ( viewWH().h - login.offsetHeight ) / 2  +scrollTop()+ 'px';
+				  	};
+				  	window.onresize = function (){
+				  	  	login.style.left = ( viewWH().w - login.offsetWidth ) / 2  + 'px';
+				  	  	login.style.top = ( viewWH().h - login.offsetHeight ) / 2  +scrollTop()+ 'px';	      
+				  	};
+				  	mask.style.background = 'red';
+				  	mask.style.display = 'block';
+				  	mask.style.height = Math.max(document.body.scrollHeight,viewWH().h) +'px';      
+			  	};
+			  	span.onclick = function () {
+			  		btn.style.zIndex = 2;
+			  		login.style.display = 'none';
+			  		mask.style.display = 'none';
+			  	} 
+			};
+		</script>
+	</head>
+	<body>
+		<input type="button" value="登录" />
+		<div id="login">我叫弹框<span>X</span></div>
+		<div id="mask"></div>
+	</body>
+</html>

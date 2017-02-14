@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+@keyframes rotate
+{
+	0%{ transform:rotateX(0deg)}
+	100%{ transform:rotateX(360deg)}
+}
+body{ margin:0; background:#999;}
+.wrap{ width:102px;height:102px; margin:200px 100px; position:relative; background:#fff; perspective:800px; perspective-origin:200px 50px; float:left;}
+.wrap2,.wrap4{ perspective-origin:-100px 50px;}
+
+.wrap div{ position:absolute; width:102px; left:0; top:102px; transform-style:preserve-3d; transform-origin:top; transform:rotateX(-36deg); background:#000; color:#fff; font-size:50px; line-height:100px; text-align:center;}
+.wrap span{ display:block; width:100px; height:100px; border:1px solid #fff; border-radius:10px;}
+.wrap>.div{top:0; transform:rotateX(0deg); transform-origin:center center -156.96px;animation:4s rotate infinite linear;}
+.wrap3>.div{animation: none;}
+.wrap4>.div{animation: none;}
+.wrap:hover>.div{animation-play-state:paused;}
+.wrap3:hover>.div{ transform:rotatex(180deg); transition:2s;}
+.wrap4:hover>.div{ transform:rotatex(360deg); transition:4s;}
+</style>
+</head>
+ 
+<body>
+<div class="wrap">
+	<div class="div">
+    	<span>1</span>
+    	<div class="div">
+        	<span>2</span>
+        	<div class="div">
+            	<span>3</span>
+            	<div class="div">
+                	<span>4</span>
+                	<div class="div">
+                    	<span>5</span>
+                    	<div class="div">
+                        	<span>6</span>
+                        	<div class="div">
+                            	<span>7</span>
+                            	<div class="div">
+                                	<span>8</span>
+                                	<div class="div">
+                                    	<span>9</span>
+                                    	<div class="div">
+                                        	<span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrap wrap2">
+	<div class="div">
+    	<span>1</span>
+    	<div class="div">
+        	<span>2</span>
+        	<div class="div">
+            	<span>3</span>
+            	<div class="div">
+                	<span>4</span>
+                	<div class="div">
+                    	<span>5</span>
+                    	<div class="div">
+                        	<span>6</span>
+                        	<div class="div">
+                            	<span>7</span>
+                            	<div class="div">
+                                	<span>8</span>
+                                	<div class="div">
+                                    	<span>9</span>
+                                    	<div class="div">
+                                        	<span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrap wrap3">
+	<div class="div">
+    	<span>1</span>
+    	<div class="div">
+        	<span>2</span>
+        	<div class="div">
+            	<span>3</span>
+            	<div class="div">
+                	<span>4</span>
+                	<div class="div">
+                    	<span>5</span>
+                    	<div class="div">
+                        	<span>6</span>
+                        	<div class="div">
+                            	<span>7</span>
+                            	<div class="div">
+                                	<span>8</span>
+                                	<div class="div">
+                                    	<span>9</span>
+                                    	<div class="div">
+                                        	<span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrap wrap4">
+	<div class="div">
+    	<span>1</span>
+    	<div class="div">
+        	<span>2</span>
+        	<div class="div">
+            	<span>3</span>
+            	<div class="div">
+                	<span>4</span>
+                	<div class="div">
+                    	<span>5</span>
+                    	<div class="div">
+                        	<span>6</span>
+                        	<div class="div">
+                            	<span>7</span>
+                            	<div class="div">
+                                	<span>8</span>
+                                	<div class="div">
+                                    	<span>9</span>
+                                    	<div class="div">
+                                        	<span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

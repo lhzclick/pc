@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			div{width: 100px;height: 100px;background: red;position: absolute;left: 0;top: 0;}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload = function (){
+			  	var div  = $('div')[0]; 
+				  	div.onmousedown = function (ev) {
+				  	var newDiv = div.cloneNode(false);
+				  	newDiv.style.opacity = .5;
+				  	newDiv.style.background = 'blue';
+				  	document.body.appendChild(newDiv)
+			  		var x = ev.clientX - newDiv.offsetLeft;
+			  		var y = ev.clientY - newDiv.offsetTop;
+			  		document.onmousemove = function (ev) {
+			  			var l = ev.clientX - x ;
+			  	  		var t = ev.clientY - y ;
+			  	  		if(l <= 0){
+			  	  			l=0
+			  	  		}
+			  	  		if(l >= viewWH().w - newDiv.offsetWidth){
+			  	  			l = viewWH().w - newDiv.offsetWidth
+			  	  		}
+			  	  		if(t <= 0){
+			  	  			t=0
+			  	  		}
+			  	  		if(t >= viewWH().h  - newDiv.offsetHeight){
+			  	  			t = viewWH().h  - newDiv.offsetHeight
+			  	  		}
+			  	  	  	newDiv.style.left = l + 'px';
+			  	  	   	newDiv.style.top = t + 'px';
+			  	  	   	console.log(newDiv.style.left);
+			  	  	   	return false;
+			  		}
+			  		document.onmouseup = function () {
+			  			div.style.left = newDiv.style.left;
+			  			div.style.top = newDiv.style.top;
+			  			document.onmousemove = null;
+			  	  	  	document.onmouseup = null;
+			  	  	  	document.body.removeChild(newDiv)
+			  		}
+			  	}
+			};
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p,ul{margin: 0;padding: 0;}
+			ul{width: 200px;margin: 0 auto;}
+			li{list-style: none;overflow: hidden;height: 30px;}
+			input{float: left;}
+			span{float: left;}
+			p{float: right;}
+			div{margin: 0 auto;width: 200px;}
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				var oUl  = document.getElementById("ul")
+				var oBtn  = document.getElementById("btn");
+				var aLi = document.getElementsByTagName('li');
+				var aInp = oUl.getElementsByTagName('input');
+				var n;
+				for (var i=0;i<aLi.length;i++) {
+					aLi[i].index = i;
+					if(i%2 == 0){
+						aLi[i].style.background = 'pink';
+					}else{
+						aLi[i].style.background = 'yellowgreen';
+					};
+					aLi[i].onmouseover = function (){
+						this.style.background = 'red';
+					};
+					aLi[i].onmouseout = function (){
+						if(aInp[this.index].checked == false){
+							if(this.index % 2 == 0){
+								this.style.background = 'pink';
+							}else{
+								this.style.background = 'yellowgreen';
+							};
+						}
+					};
+					aInp[i].onclick = function(){
+						n = 0;
+						for (var i=0;i<aInp.length;i++){
+							if(aInp[i].checked){
+								n ++;
+							}
+						};
+						if(n == aInp.length){
+							oBtn.checked = true;
+						}else{
+							oBtn.checked = false;
+						}
+					}
+				};
+				oBtn.onclick = function () {
+					if(oBtn.checked){
+						for (var i=0;i<aInp.length;i++) {
+							aInp[i].checked = true; 
+							aLi[i].style.background = 'red';
+						}
+					}else{
+						for (var i=0;i<aInp.length;i++) {
+							aInp[i].checked = false; 	
+							if(i%2 == 0){
+								aLi[i].style.background = 'pink';
+							}else{
+								aLi[i].style.background = 'yellowgreen';
+							};
+						};
+					};
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ul">
+			<li><input type="checkbox"/><span>私奔</span><p>梁博</p></li>
+			<li><input type="checkbox"/><span>私奔</span><p>梁博</p></li>
+			<li><input type="checkbox"/><span>私奔</span><p>梁博</p></li>
+			<li><input type="checkbox"/><span>私奔</span><p>梁博</p></li>
+			<li><input type="checkbox"/><span>私奔</span><p>梁博</p></li>
+			<li><input type="checkbox"/><span>私奔</span><p>梁博</p></li>
+		</ul>
+		<div><input type="checkbox" id="btn"/>全选</div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+img{vertical-align: top;}
+html *{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+input,button{-webkit-appearance:none;}
+html{height: 100%;}
+body,input,h1,h2,h3,h4,ul,dl,dd{padding: 0;margin: 0;font:.3rem "微软雅黑";}
+li{list-style:none ;}
+body{position: relative;height: 100%;}
+a{text-decoration: none;}
+.wrap{overflow: auto; height: 100%;width: 100%;overflow: auto;}
+#header{width: 100%;height: 2.25rem;position: absolute;left: 0;top: 0;border-top: 1px solid #a8aaae;border-radius: .125rem;z-index: 2;background: #f32d2d;}
+#header span{width: .9rem;height: 0.775rem;position: absolute;left: .9rem;top: 0.55rem;background: url(../img/1-headerIco.png) no-repeat;background-size:contain ;}
+#header .input{position: absolute;width:  9.95rem;height: 1.65rem;left: 2.7rem;top: .3rem;background: #e8eaef;border-radius: .1rem;}
+#header .text{width: 9.95rem;height: 100%; background: #fee9e9;border: none;text-indent: 0.45rem;border-radius: .1rem;font-size:0.7rem ;color: #d5c0c0;}
+#header .submit{width: .75rem;height: .75rem;background: url(../img/1-headerIco2.png) no-repeat;position: absolute;right: 0.65rem;bottom: .4rem;background-size:contain ;border: none;}
+#header .word{width: 1.2rem;height: .6rem;line-height: .6rem;font-size:.6rem;color: #fff;right: .9rem;bottom:.9rem;position: absolute;font-family: "宋体";}
+.banner{width: 100%;height: 10.6rem;padding-top: 2.25rem;}
+.banner .img{width: 100%;height: 7.7rem;position: relative;}
+.banner img{width: 100%;height: 7.7rem;}
+.banner .circle{width: 2.4rem;height:.3rem;position: absolute;right: .6rem;bottom: .25em;}
+.banner .circle a{float: left;box-sizing: border-box;border: 0.075rem solid #fff;border-radius:50% ;width:.3rem;height: .3rem;margin: 0 0.05rem;}
+.banner .circle a:hover{background: #fff;}
+.banner .listIco{ height: 2.875rem;width: 100%;}
+.banner .listIco img{width: 1.45rem;height: 1.45rem;}
+.banner .listIco li{width: 25%;box-sizing: border-box;float: left;padding-top: .25rem;text-align: center;}
+.banner .listIco strong{display: block;font-size: .55rem;color: #53616a;line-height: 1.15rem;}
+.tmHot{width: 100%;height: 13.9rem;border-top: 0.125rem solid #ebebeb;}
+.tmHot .header{width: 100%;height: 2.7rem;padding-top: 0.425rem;}
+.tmHot .header h3{width: 2.15rem;height: 0;padding-top: 1.8rem;background: url(../img/1-tmHot1.png) no-repeat;background-size: contain;padding-left: .3rem;padding-right: .3rem;border-right: 2px solid #eee;overflow: hidden;float: left;}
+.tmHot .header .kole{float: left;width: 9.3rem;font-size: .55rem;letter-spacing: 1px;padding-left: 1.9rem;line-height: .9rem;position: relative;}
+.tmHot .kole a{color: #757575;}
+.tmHot .kole span{color: #ff4f4f;}
+.tmHot .header .ico{width: 0.825rem;height: .75rem;background: url(../img/1-tmHot3.png) no-repeat;background-size:contain ;	position: absolute;left: .5rem;top: .5rem;}
+.tmHot .content{width: 100%;height: 11.125rem;padding:0.225rem;background:#ff6000;padding-right: 0;box-sizing: border-box;}
+.tmHot .content .img{width:100%;height: 6.75rem;}
+.tmHot .content .img img{width: 15.55rem;height: 6.75rem;}
+.tmHot .listIco{height:3.975 rem;}
+.tmHot .listIco li{padding-right:0.225rem;float: left;width: 25%;box-sizing: border-box;padding-top: 0.225rem;}
+.tmHot .listIco img{width: 100%;height:100%;}
+.sell{width: 100%;height: 18rem;border-bottom: .35rem solid #f5f5f5;margin-top: .425rem;}
+.sell li{float: left;width: 8.4rem;height: 4.45rem;border-bottom:.1rem solid #f8f8f8;border-right:.1rem solid #f8f8f8 ;}
+.sell li img{width: 8.4rem;height: 4.45rem;}
+.sell li:nth-of-type(1){width: 7.325rem;height: 8.875rem;border-bottom: .15rem solid #f8f8f8;}
+.sell li:nth-of-type(1) img{width: 7.325rem;height: 8.875rem;}
+.sell li:nth-of-type(4),.sell li:nth-of-type(6){width:7.325rem;height:4.45rem;}
+.sell li:nth-of-type(4) img,.sell li:nth-of-type(6) img{width:7.325rem;height:4.45rem;}
+.superDay{height: 14.7rem;width: 100%;}
+.superDay .header{height: 1.75rem;width: 100%;position: relative;}
+.superDay .header h3{position: absolute;background: url(../img/1-superDay3.png) no-repeat;width: 3.65rem;height:0;padding-top:1rem;background-size: contain;left: 0;top: 0.35rem;overflow: hidden;}
+.superDay .header a{position: absolute;background: url(../img/1-superDay4.png) no-repeat;width: 1.875rem;height:0;padding-top:.6rem;background-size: contain;right:0.45rem;top: 0.5rem;overflow: hidden;}
+.superDay .img{overflow: hidden;}
+.superDay li{float: left;}
+.superDay li img{width: 4.2rem;height: 8.85rem;border: 2px solid #f9f9f9;border-left: none;}
+.superDay li:nth-of-type(1) img{width: 7.225rem;height: 8.85rem;}
+.superDay .banner img{width: 16rem;height: 4rem;}
+.market{width: 100%;}
+.market .header{height: 1.75rem;width: 100%;position: relative;}
+.market .header h3{position: absolute;background: url(../img/1-market4.png) no-repeat;width: 3.65rem;height:0;padding-top:1rem;background-size: contain;left: 0;top: 0.35rem;overflow: hidden;}
+.market ul{overflow: hidden;border-top: 2px solid #f9f9f9;;}
+.market li{float: left;}
+.market li img{width: 8.35rem;height: 4.625rem;border-right: 2px solid #f9f9f9;border-bottom: 2px solid #f9f9f9;;}
+.market li:nth-of-type(1) img{width: 7.425rem;height: 9.275rem;}
+.market li:nth-of-type(4) img,.market li:nth-of-type(6) img{width: 7.425rem;}
+.market .img img{width: 16rem;height: 4rem;}
+.hotMarket{width: 100%;}
+.hotMarket .header{height: 1.75rem;width: 100%;position: relative;}
+.hotMarket .header h3{position: absolute;background: url(../img/1-hotMarket3.png) no-repeat;width: 3.65rem;height:0;padding-top:1rem;background-size: contain;left: 0;top: 0.35rem;overflow: hidden;}
+.hotMarket .header a{position: absolute;background: url(../img/1-hotMarket4.png) no-repeat;width: 3.55rem;height:0;padding-top:0.625rem;background-size: contain;right:0.45rem;top: 0.5rem;overflow: hidden;}
+.hotMarket ul{overflow: hidden;}
+.hotMarket li{float: left;}
+.hotMarket li img{width: 3.95rem;height: 6.425rem;border-top: 2px solid #f9f9f9;border-right: 2px solid #f9f9f9;box-sizing: border-box;}
+.hotMarket img{width: 16rem;height: 4rem; }
+.brand{width: 100%;}
+.brand .header{height: 1.75rem;width: 100%;position: relative;}
+.brand .header h3{position: absolute;background: url(../img/1-brand2.png) no-repeat;width: 3.65rem;height:0;padding-top:1rem;background-size: contain;left: 0;top: 0.35rem;overflow: hidden;}
+.brand .header a{position: absolute;background: url(../img/1-brand3.png) no-repeat;width: 6.75rem;height:0;padding-top:0.625rem;background-size: contain;right:0.45rem;top: 0.5rem;overflow: hidden;}
+.brand .xiahu{width: 100%;height: 2.2rem;border-top: 2px solid #f9f9f9;position: relative;}
+.brand .xiahu h4{position: absolute;background: url(../img/1-brand1.png) no-repeat;width: 8.55rem;height:0;padding-top:1.65rem;background-size: contain;left: 0.55rem;top: 0.6rem;overflow: hidden;}
+.brand .xiahu .fance{position: absolute;width: 3.15rem;height: 0.55rem;line-height: 0.55rem;top: 1.15rem;right: 0.55rem;color: #bdbdbd;font-size: 0.55rem;font-weight: bold;}
+.brand .hot{width: 100%;height: 1.2rem;position: relative;}
+.brand .hot h4{position: absolute;background: url(../img/1-brand4.png) no-repeat;width: 10.625rem;height:0;padding-top:.75rem;background-size: contain;left:0.675rem;top: 0.45rem;overflow: hidden;}
+.brand .logo{position: relative;}
+.brand .logo img{width: 16rem;height: 7.075rem;}
+.brand .circle{height: 0.375rem;position: absolute;left: 7.375rem;bottom: .5rem;}
+.brand .circle span{float: left;margin-left: 0.125rem;margin-right: 0.125rem;width:  0.375rem;height: 0.375rem;background: #eee;border-radius: 50%;}
+.brand .circle span:hover,.brand .circle .active{background: #dd2727;}
+.youLike{width: 100%;background: #f5f5f5;}
+.youLike .header{width: 100%;height: 2.125rem;position: relative;}
+.youLike .header h3{position: absolute;background: url(../img/1-youLike1.png) no-repeat;width: 3.75rem;height:0;padding-top:.6rem;background-size: contain;left:6.125rem;top: 0.85rem;overflow: hidden;}
+.youLike ul{	width: 100%;}
+.youLike li{width: 50%;height: 11.1rem;position: relative;float: left;box-sizing: border-box;}
+.youLike li a{position: absolute;background:url(../img/1-youLike.png) no-repeat;width: 7.85rem;height:0;padding-top:11rem;background-size: contain;left:0;top:0;overflow: hidden;border-bottom: .1rem solid #f5f5f5;}
+.youLike li:nth-child(even) a{border-left: .1rem solid #f5f5f5;} 
+
+
+

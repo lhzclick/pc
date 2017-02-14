@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#div { width: 500px;height: 500px;margin: 40px auto;background:url(img-js/1.png) no-repeat 0 0;border:1px solid #000;position: relative;}
+			#div div {width: 48px;height: 48px;border:1px solid #000;position: absolute;opacity: 1;transition: 1s;}
+		</style>
+		<script type="text/javascript">
+			window.onload  = function () {
+				var oDiv  = document.getElementById("div");
+				var aDiv = oDiv.getElementsByTagName('div');
+				var str = "";
+				var arr = ['red','yellow','blue','pink']
+				var L = 0;
+				var T = 0;
+				for(var i=0;i<100;i++){
+					L = (i%10)*50;
+					T = Math.floor(i/10)*50;
+					str += '<div style = "left:'+L+'px;top:'+T+'px; background:'+arr[i%4] +'"></div>';
+				}
+				oDiv.innerHTML = str;
+				for (var i=0;i<100;i++) {
+					aDiv[i].onmouseover = function(){
+						this.style.opacity = 0;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div"></div>
+	</body>
+</html>

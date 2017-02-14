@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{width: 600px;height: 600px;border:1px solid #000;margin: 0 auto;position: absolute;left: 300px;top: 0;}
+			body,p{-webkit-user-select: none;margin: 0;padding: 0;}
+			div{width: 58px;height: 58px;background:#C0C0C0;position: absolute;left: 0;top: 0;border:1px solid #000;}
+			img{width: 58px;height: 58px;opacity: 0;/*border: 1px solid #000;*/}
+			input{width: 200px;height: 150px;font-size: 30px;position: absolute;right: 100px;top: 250px;background: #9CCE00;border-radius:50% ;outline: none;}
+			#sec{position: absolute;left: 100px;top: 100px;background: #BDB76B;width: 40px;border-radius:10%;padding:50px 40px;text-align: center;font-size: 30px;}
+			p{color: red;font-size: 60px;font-weight: bold;}
+			#show{width: 200px;height: 200px;background: red;position: absolute;left: 400px;top: -200px;border-radius:50% ;text-align: center;line-height: 200px;color: #fff;font-size: 40px;opacity: 0;}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload  = function () {
+				
+				fn();
+				function fn(){
+					var wrap = $('#wrap');
+					var oP = $('p')[0]
+					var smallDiv = $('div');
+					var start  =$('#start');
+					var str = '';
+					var img = $('img');
+					var show = $('#show')
+					for (var i = 0; i<100;i++) {
+						var L =  (i % 10)*60;
+						var T =  Math.floor(i /10)*60;
+						str += '<div style="left:'+ L +'px;top:'+ T +'px"></div>';
+					};
+					wrap.innerHTML = str;
+					  	start.onclick  = function (){
+						var arr = [];
+						for(var i = 0;i <100; i++ ){
+						  	arr.push(i);  
+						};
+						arr.sort(function (){
+						  return Math.random() - 0.5      
+						})
+						arr.length = 10;
+						for(var i = 0;i <arr.length; i++ ){
+						  	 smallDiv[arr[i]].innerHTML = '<img src="img-js/lei.jpg"/>' 
+						};
+						start.value= '正在扫雷...'
+						this.disabled = true;
+						var m = 90;
+						for(var i = 0;i <smallDiv.length; i++ ){
+						    smallDiv[i].onmousedown= function () {
+						    	m--;
+						    	oP.innerHTML = m;
+						    	if(this.firstElementChild){
+						    		this.firstElementChild.style.opacity = 1;
+						    	}else{
+						    		this.style.opacity = 0;
+						    	}
+						    	if(m===70){
+						    		show.style.opacity = 1;
+						    		doMove(show,'top',20,400);
+						    		shake(wrap,'top',50,function () {
+							    		show.style.opacity = 0;
+							    		show.style.top = '-200px';
+							    		alert('你赢了');
+										fn();
+										start.disabled = false;
+										start.value= '开始扫雷'
+										oP.innerHTML = 90;
+						    		})
+								}
+						    };
+						};
+//						var n = 0;
+						for(var i = 0;i <img.length; i++ ){
+							img[i].onmousedown = function (){
+							    for(var i = 0;i <img.length; i++ ){
+							      	img[i].style.opacity = 1;
+							    };
+							    for(var i = 0;i <smallDiv.length; i++ ){
+							      	smallDiv[i].style.background = '#fff'
+							    };
+							    shake(wrap,'left',20,function () {
+							    	alert('踩到雷了，还来吗？')
+							    	oP.innerHTML = 90;
+							    	start.disabled = false;
+							    	start.value= '开始扫雷'
+							    	fn();
+							    })
+							} ;  
+						};
+					};      
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<section id="wrap"></section>
+		<section id="sec">你离成功只剩<p>90</p>步了</section>
+		<input type="button" value="开始游戏"  id="start"/>
+		<section id="show">恭喜你赢了</section>
+	</body>
+</html>

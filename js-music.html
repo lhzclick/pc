@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;background: #ccc;}
+			div{width: 400px;height: 110px;background:plum ;margin-top: 20px;font-size: 50px;}
+			img{vertical-align: top;width: 400px;position: absolute;left: -400px;top: 60px;border:none;transition: 2s;transform: rotateX(0);}
+		</style>
+		<script type="text/javascript">
+			window.onload = function (){
+			  	var div = document.getElementsByTagName('div');
+			  	var arr = ['radio/信仰.mp3','radio/情人.mp3','radio/我选择喜欢你.mp3','radio/月半小夜曲.mp3','radio/简单爱.mp3'];
+			  	var arr2 = ['信仰(张信哲)','情人(Beyond)','我选择喜欢你(周笔畅)','月半小夜曲(李克勤)','简单爱(周杰伦)']
+			  	var arr3 = ['img-js/imgMusic/1.jpg','img-js/imgMusic/2.jpg','img-js/imgMusic/3.jpg','img-js/imgMusic/4.jpg','img-js/imgMusic/5.jpg',]
+			  	var audios = document.createElement('audio');
+			  	document.body.appendChild(audios);
+			  	var img = document.getElementsByTagName('img');
+			  	for(var i = 0;i <img.length; i++ ){
+			  	    img[i].src = arr3[i];
+			  	};
+			  	for(var i = 0;i <div.length; i++ ){
+			  		div[i].index = i;
+			  		div[i].onOff = true;
+			  	    div[i].onclick = function (){
+			  	    	if(this.onOff){
+			  	    		for(var i = 0;i <div.length; i++ ){
+			  	    			img[i].style.left = '-400px';
+			  	    			div[i].style.color = '#000';
+				  	    		div[i].innerHTML = '点击播放';
+				  	    		div[i].onOff = true;
+				  	    	};
+				  	        audios.src = arr[this.index];
+				  	        img[this.index].style.left = '700px';
+				  	        img[this.index].style.transform = 'rotateX(360deg)'
+				  	        audios.play();
+				  	        this.innerHTML = arr2[this.index];
+				  	        this.style.color = 'blue' ;
+				  	        this.onOff = false;
+				  	    }else{
+				  	    	 audios.src = '';
+				  	    	 this.onOff = true;
+				  	    	 this.innerHTML = '点击播放';
+				  	    	 this.style.color = '#000'
+				  	    }
+			  	    } ;
+			  	    
+			  	};
+			};
+		</script>
+	</head>
+	<body>
+		<div>点击播放</div>
+		<div>点击播放</div>
+		<div>点击播放</div>
+		<div>点击播放</div>
+		<div>点击播放</div>
+		<img src="" alt="" />
+		<img src="" alt="" />
+		<img src="" alt="" />
+		<img src="" alt="" />
+		<img src="" alt="" />
+		<p></p>
+	</body>
+</html>

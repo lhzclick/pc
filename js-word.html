@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p,textarea{margin: 0;padding: 0;}
+			section{overflow: hidden;width: 700px;margin: 30px auto;}
+			textarea{float: left;width: 200px;height: 200px;border:5px solid #0000FF;line-height: 20px; resize:none; overflow:auto;}
+			#div1{width: 100px;height: 170px;border:5px solid red;float: left;text-align: center;padding-top: 30px;position: relative;}
+			#div1 em {height: 30px;line-height: 30px;text-align: center;font-size: 26px;font-family: "微软雅黑";font-style: normal;}
+			#div1 p{width: 100px;height: 20px;position: absolute;left: 0;bottom: 80px;display: none;}
+			#div1 p span{float: left;width: 10px;height: 10px;background: blue;margin-left: 5px;border-radius: 50%;}
+			#div1 strong{position: absolute;left: 10px;bottom: 20px;width: 80px;height: 40px;background:green;border-radius:5px;line-height: 40px;color: #fff;}
+			#div2{float: left;width: 200px;height: 200px;border: 5px solid #CCCCCC;}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload = function () {
+				var oText = $('#text');
+				var oDiv= $('#div2');
+				var play = $('strong')[0];
+				var n = 0;
+				var timer = null;
+				var onOff = true;
+				var aEm  = $('em')[0];
+				var aSpan = $('span');
+				var aP= $('p')[0];
+				play.onclick = function (){
+					var m = oText.value;
+					if(oText.value==''){alert('请输入')}
+					if(oText.value=='' || timer) return;
+						aP.style.display = 'block';
+						oDiv.innerHTML ='';
+						timer = setInterval(function(){
+							oDiv.innerHTML += m.charAt(n);
+							oText.value = m.substring(n+1);
+							aEm.innerHTML = (1 + n)+'/'+m.length;
+							for (var i=0;i<aSpan.length;i++) {
+								aSpan[i].style.background = '';
+							}
+							aSpan[n%6].style.background = 'red';
+							n++;
+							if(n==m.length){
+								clearInterval(timer);
+								timer =null;
+								n=0;
+								aP.style.display = 'none';
+							};
+						},90)
+				}
+			} 
+		</script>
+	</head>
+	<body>
+		<section>
+			<textarea id="text" value=""></textarea>
+			<div id="div1">
+				<em>0/0</em>
+				<p>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</p>
+				<strong>开始打印</strong>
+			</div>
+			<div id="div2"></div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+@-webkit-keyframes move
+{
+	0%{ transform:rotate(0deg)}
+	100%{ transform:rotate(360deg)}	
+}
+
+body{ margin:0;}
+.div{ width:10px;height:10px;background: #999;border-radius:50%; margin:50px auto;position:relative;padding:60px;}
+.circle{ width:10px; height:10px;border-radius:50%; background:#F00; position:absolute;}
+.shizhen{ width:40px; height:4px; background: #3F6; border-radius:3px; position:absolute; left:50%; top:50%; margin-top:-2px; margin-left:-2px; transition:2s; transform-origin:2px 2px; animation:60s move infinite linear; z-index:6;}
+.fenzhen{ width:50px; height:4px; background: #009; border-radius:3px; position:absolute; left:50%; top:50%; margin-top:-2px; margin-left:-2px; transition:2s; transform-origin:2px 2px; animation:30s move infinite linear; z-index:8;}
+.miaozhen{ width:60px; height:4px; background:#F39; border-radius:3px; position:absolute; left:50%; top:50%; margin-top:-2px; margin-left:-2px; transition:2s; transform-origin:2px 2px; animation:15s move infinite linear; z-index:10;}
+.box{position:absolute; color: #000;font-size:16px;font-weight:bold;}
+.box1{ left:50%;top:0; margin-left:-8px;}
+.box2{ right:5px;top:50%; margin-top:-8px}
+.box3{ left:50%;bottom:0; margin-left:-4px;}
+.box4{ left:5px;top:50%; margin-top:-8px}
+</style>
+</head>
+
+<body>
+<div class="div">
+	<div class="circle"></div>
+	<div class="miaozhen"></div>
+    <div class="fenzhen"></div>
+    <div class="shizhen"></div>
+    <div class="box box1">12</div>
+    <div class="box box2">3</div>
+    <div class="box box3">6</div>
+    <div class="box box4">9</div>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

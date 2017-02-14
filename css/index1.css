@@ -1,0 +1,344 @@
+
+@keyframes rotate
+{
+	0%{transform:rotateY(0deg);}
+	100%{transform:rotateY(-360deg);}
+}
+p,body,ul{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+body{
+	margin: 0;
+	overflow: hidden;
+	background: #0e1424;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+li{list-style: none;}
+img{
+	vertical-align: top;
+	border:0;
+}
+#wrap{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#mianNav {
+	width: 480px;
+	overflow: hidden;
+	position: relative;
+	left: 20px;
+	top: 20px;
+	z-index: 2;
+}
+#mianNav ul li{
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	font-family:  "微软雅黑";
+	font-size: 20px;
+	text-align: center;
+	border-radius:50%;
+	float: left;
+	margin-left: 20px;
+	transition:2s ;
+	color: #fff;
+}
+#underline{
+	position: absolute;	
+	left: 30px;
+	top: 120px;
+	z-index: 3;
+	color: red;
+	transition: .5s;
+}
+#intro{
+	position: absolute;
+	left: -600px;
+	top: 250px;
+	transition: 2s;
+	color: #fff;
+	font-family:"微软雅黑" ;
+	line-height: 30px;
+}
+#intro img{
+	width: 400px;
+	height: 300px;
+	transform: rotateX(0deg) ;
+}
+#mianNav .active{
+	background:green;
+	transform: rotateX(360deg);
+}
+#workNav{ 
+	width:402px;
+	height:602px;
+	position:absolute; 
+	perspective:1000px;
+	transition: 2s 1s; 
+	left: 750px;
+	top: -650px;
+}
+#workNav div{
+	width:402px;
+	position:absolute; 
+	left:402px; 
+	top:0; 
+	transform-style:preserve-3d; 
+	transform-origin:left; 
+	transform:rotateY(60deg);
+	transition: 1s;
+}
+#workNav p{ 
+	width:400px; 
+	height:600px; 
+	border:1px solid #00F; 
+	background:#F36; 
+	color:#fff; 
+	font-size:50px; 
+	line-height:300px; 
+	text-align:center;
+}
+#workNav>.rotateDiv{ 
+	left:0; 
+	transform:rotateY(0deg); 
+	transform-origin:center center -348.14px;
+	animation:12s rotate infinite linear;
+}
+#workNav img{
+	width: 400px;
+	height: 600px;
+}
+#div1{
+	background: url(../liuhu/img-background/1.jpg) no-repeat;
+}
+#div1 .prev{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	background: #00B4DE;
+	right: 740px;
+	top: 300px;
+	border-radius:50% ;
+	text-align: center;
+	line-height: 80px;
+	font-size: 50px;
+	color: #fff;
+	display: none;
+}
+#div1 .prev:hover{
+	background: blue;
+}
+#div1 .next:hover{
+	background: blue;
+}
+#div1 .prev:hover .rotateDiv{ animation-play-state:paused;}
+#div1 .next:hover .rotateDiv{ animation-play-state:paused;}
+#div1 .next{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	background: #00B4DE;
+	right: 10px;
+	top: 300px;
+	border-radius:50% ;
+	text-align: center;
+	line-height: 80px;
+	font-size: 50px;
+	color: #fff;
+	display: none;
+}
+#div2{
+	background:url(../liuhu/img-background/2.jpg) no-repeat;
+	position: relative;
+}
+#div2 .listImg img{
+	width: 500px;
+}
+#div2 .imgDiv{
+	margin-left:500px ;
+	width: 500px;
+	border:5px solid #0000FF;
+	position: relative;
+}
+#div2 .listImg li{
+	display: none;
+}
+#div2 .listImg li:nth-of-type(1){
+	display: block;
+}
+#div2 .listImg span{
+	position: absolute;
+	left: 120px;
+	top: 10px;
+	font-family:"黑体";
+	font-size: 30px;
+	color:#FF0000;
+}
+#div2 .point{
+	width: 240px;
+	height: 40px;
+	position: absolute;
+	bottom: -10px;
+	left: 100px;
+}
+#div2 .point span{
+	float: left;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: cornflowerblue;
+	margin: 10px 10px;
+}
+#div2 .point .show{
+	background: red;
+}
+#div2 .smallDiv{
+	width: 360px;
+	position: absolute;
+	left: 150px;
+	top: 190px;
+}
+#div2 .smallDiv img{
+	width: 140px;
+	float: left;
+	margin-left: -100px;
+	border: 5px solid #008000;
+	opacity: 0;
+}
+#div2 .prev{
+	color: #000;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bolder;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background:darkorange;
+	left: 0;
+	top: 240px;
+	border-radius: 10px;
+}
+#div2 .next{
+	color: #000;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bolder;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background:darkorange;
+	right: 0;
+	top: 240px;
+	border-radius: 10px;
+}
+#div2 .tabBtn div:hover{
+	background:#008000;
+}
+#div3{
+	background: url(../liuhu/img-background/3.jpg);
+}
+#div3 .cssList{
+	position: relative;
+	width: 700px;
+	height: 700px;
+	left: 550px;
+	top: 20px;
+}
+#div3 img{
+	width: 300px;
+	height: 300px;
+	border:5px solid #222324;
+}
+#div3 li{
+	float: left;
+	transition: 5s;
+	position: relative;
+}
+#div3 li span{
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	background: orangered;
+	left: 0;
+	bottom: 0;
+	opacity: .5;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+} 
+#div3 li:hover span{
+	opacity: 1;
+	transition: .3s;
+
+}
+#div3 li:nth-of-type(1){
+	transform: rotateZ(-25deg);
+}
+#div3 li:nth-of-type(3){
+	transform: rotateZ(25deg);
+}
+#div3 li:nth-of-type(4){
+	transform: rotateZ(-10deg);
+}
+#div4{
+	background: url(../liuhu/img-background/4.jpg);
+}
+#div4 .listJs{
+	overflow: hidden;
+	position: relative;
+	width: 1000px;
+	height: 930px;
+	left: 500px;
+}
+#div4 img{
+	width: 200px;
+	height: 200px;
+	border:2px solid #000;
+}
+#div4 .listJs li{
+	float: left;
+	list-style: none;
+	margin-left: 10px;
+	margin-top: 10px;
+	left: 0;
+	top: 0;
+	transition: .5s;
+	position: relative;
+}
+#div4 .listJs li:nth-of-type(odd):hover{
+	transform: rotateY(40deg);
+}
+#div4 .listJs li:nth-of-type(even):hover{
+	transform: rotateX(40deg);
+}
+#div4 .listJs li span{
+	font-family: "微软雅黑";
+	text-align: center;
+	background:#00B4DE;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+}
+
+
+
+
+
+
+
+
+
+

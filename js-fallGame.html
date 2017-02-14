@@ -1,0 +1,105 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>妙味课堂-JS4课练习-游戏：你的鼠标有多快？</title>
+<style>
+body { background:#f1f1f1; font-family:微软雅黑; font-size:16px;margin: 0;-webkit-user-select: none;}
+#box { width:800px; height:500px; border:1px solid #066; background:#FFF; margin:20px auto 0; position:relative; top:-80px; left:0;overflow: hidden;}
+#fraction { width:130px; border:1px solid #066; position:relative; top:22px; left:120px; background:#FFC; padding:10px;}
+#fraction p { margin:0; font-family:微软雅黑; font-size:16px; line-height:30px; }
+#alert { text-align:center; }
+input{width: 100px;height: 50px;outline: none;}
+#qq{width: 50px;height: 50px;position: absolute;left: 0;top: -50px;}
+img{width: 50px;height: 50px;}
+</style>
+<script src="js/library.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		var btn = $('input')[0];
+		var qq = $('#qq');
+	 	var img = $('img')[0];
+	 	var box = $('#box');
+ 		var win = $('span')[0];
+ 		var lose = $('span')[1];
+ 		var Counter1 = 0;
+ 		var Counter2 = 0;
+ 		var onOff = true;
+ 		var speed = 2;
+		btn.onclick = function (){
+			fn();
+		 	function fn(){
+		 		btn.disabled = true;
+			 	btn.value = '游戏进行中...'
+			 	var random1 = Math.round(750*Math.random());
+			 	var random2 = Math.ceil(8*Math.random())+2;
+			 	qq.style.left = random1 + 'px';
+			 	
+			 	img.src = 'img-js/' + random2 + '.jpg'
+			 	doMove(qq,'top',speed,500,function (){
+			 		shake(box,'left',10,function (){
+			 			Counter1++;
+			 		    qq.style.top = '-50px' ;
+			 	 		fn();  
+			 		})
+			 	}) 
+			 	qq.onmousedown= function (){
+			 		clearInterval(qq.timer);
+			 		if(onOff){
+						Counter2++;
+						speed ++;
+						shake(this,'left',20,function (){
+					    	qq.style.top = '-50px';
+					    	fn();
+					    	onOff = true
+						}); 
+						onOff = false;
+			 		}
+			 	  	return false;
+			 	} ;
+			 	lose.innerHTML = Counter1;
+			 	win.innerHTML = Counter2;
+			 	if(Counter1 >= 3){
+			 		clearInterval(qq.timer);
+			 		alert('游戏失败')
+			 		speed = 2;
+			 		Counter1 = 0;
+			 		Counter2 = 0;
+			 		lose.innerHTML = 0;
+			 		win.innerHTML = 0
+			 		btn.disabled = false;
+			 		btn.value = '开始游戏'
+			 	}
+			 	if(Counter2 >= 16){
+			 		clearInterval(qq.timer);
+			 		alert('你赢了，还来吗？');
+			 		speed = 2;
+			 		Counter1 = 0;
+			 		Counter2 = 0;
+			 		lose.innerHTML = 0;
+			 		win.innerHTML = 0
+			 		btn.disabled = false;
+			 		btn.value = '开始游戏'
+			 	}
+		 	};
+		};
+	}
+</script>
+</head>
+<body>
+	<div id="alert">
+		<h2>你的鼠标有多快？</h2>
+		<p>游戏说明：点击“开始游戏”，随机掉下QQ表情，点中它，千万别让它掉下去！！</p>
+		<input type="button" value="开始游戏" />
+	</div>
+	<div id="fraction">
+		<p>得分：<span>0</span>分</p>
+		<p>失分：<span>0</span>分</p>
+	</div>
+	<div id="box">
+		<div id="qq"><img src="img/1.jpg" alt="" /></div>
+	</div>
+
+</body>
+</html>

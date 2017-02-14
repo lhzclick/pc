@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body{margin: 0;background: #ccc;}
+		div{width: 500px;height: 500px;margin: 0 auto;position: relative;margin-top: 20px;border-radius:50%;overflow: hidden;}
+		img{width: 500px;position: absolute;left: 0;top: 0;outline: none;transform:rotate(0deg);}
+		.span1{position: absolute;height: 150px;width: 10px;position: absolute;left: 50%;top: 0;background: blue;margin-left: -5px;margin-top: 102px;border-radius:50%; transform:rotate(0deg);transform-origin:5px 150px;}
+		.span2{width: 10px;height: 10px;background: #000;position: absolute;left: 50%;top: 50%;border-radius: 50%;margin-left: -5px;margin-top: -3px;}
+		input{border-radius:20px ;outline: none;}
+		.btn1{position: absolute;right: 120px;top: 200px;background: springgreen;width: 150px;height: 50px;font-family: "微软雅黑";font-size: 20px;}
+		.btn2{position: absolute;right: 120px;top: 280px;background: springgreen;width: 150px;height: 50px;font-family: "微软雅黑";font-size: 20px;}
+		.btn3{position: absolute;left: 120px;top: 200px;background: springgreen;width: 150px;height: 50px;font-family: "微软雅黑";font-size: 20px;}
+		.btn4{position: absolute;left: 120px;top: 280px;background: springgreen;width: 150px;height: 50px;font-family: "微软雅黑";font-size: 20px;}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload = function () {
+				var oSpan = $('span')[0];
+				var aBtn = $('input');
+				var oImg = $('img')[0];
+				var n = 0 ; 
+				var timer1 = null;
+				var timer2 =null;
+				var onOff1 = true;
+				var onOff2 = true;
+				aBtn[0].onclick = function (){
+					clearInterval(timer1)
+					if(onOff1){
+						timer1=setInterval(function () {
+							oSpan.style.transform += 'rotate(9deg)'
+						},16);
+						onOff1 = false;
+					}else{
+						clearInterval(timer1);
+						onOff1 = true;
+					}
+				};
+				aBtn[1].onclick = function (){
+					clearInterval(timer2)
+					if(onOff2){
+						timer2=setInterval(function () {
+							oImg.style.transform += 'rotate(9deg)'
+						},16);
+						onOff2 = false;
+					}else{
+						clearInterval(timer2);
+						onOff2 = true;
+					}
+				};
+				aBtn[2].onclick = function (){
+					if(onOff1 ==false) return;
+						oSpan.style.transform = 'rotate(0deg)'
+				};
+				aBtn[3].onclick = function (){
+					if(onOff2 ==false) return;
+					oImg.style.transform = 'rotate(0deg)'
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="img-js/prize.jpg" alt="" />
+			<span class="span1"></span>
+			<span class="span2"></span>
+		</div>
+		<input class="btn1" type="button" value="恭喜中奖(指针)" />
+		<input class="btn2" type="button" value="恭喜中奖(转盘)" />
+		<input class="btn3" type="button" value="指针归零" />
+		<input class="btn4" type="button" value="转盘归零" />
+	</body>
+</html>

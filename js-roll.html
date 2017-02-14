@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			ul {
+				margin: 0;
+				padding: 0;
+				-webkit-user-select: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#wrap {
+				position: absolute;
+				border: 3px solid #0000FF;
+				left: 100px;
+				top: 20px;
+				width: 600px;
+				height: 300px;
+				overflow: hidden;
+			}
+			
+			ul {
+				width: 600px;
+				background: #DEE7E7;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#scroll {
+				width: 40px;
+				height: 300px;
+				background: #228B22;
+				right: 0;
+				top: 0;
+				position: absolute;
+				z-index: 2;
+			}
+			
+			#scrollBtn {
+				width: 40px;
+				height: 60px;
+				background: pink;
+				border-radius: 16px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var scroll = document.getElementById('scroll');
+				var scrollBtn = document.getElementById('scrollBtn');
+				var ul = document.getElementsByTagName('ul')[0];
+				scrollBtn.style.height = wrap.clientHeight * scroll.clientHeight / wrap.scrollHeight + 'px';
+				scrollBtn.onmousedown = function(ev) {
+					var y = ev.clientY - scrollBtn.offsetTop;
+					var n = (wrap.scrollHeight - wrap.clientHeight) / (scroll.clientHeight - scrollBtn.offsetHeight)
+					document.onmousemove = function(ev) {
+						var t = ev.clientY - y;
+						if (t < 0) {
+							t = 0;
+						}
+						if (t > scroll.clientHeight - scrollBtn.offsetHeight) {
+							t = scroll.clientHeight - scrollBtn.offsetHeight
+						}
+						scrollBtn.style.top = t + 'px';
+						ul.style.top = -n * t + 'px';
+					};
+					document.onmouseup = function(ev) {
+						document.onmousemove = null;
+						document.onmouseup = null;
+					};
+				};
+				mousewheel(wrap, function() {
+					var T = scrollBtn.offsetTop - 10;
+					if (T <= 0) {
+						T = 0
+					}
+					var scale = T / (scroll.clientHeight - scrollBtn.offsetHeight);
+					scrollBtn.style.top = T + "px";
+					ul.style.top = -scale * (wrap.scrollHeight - wrap.clientHeight) + "px";
+				}, function() {
+					var T = scrollBtn.offsetTop + 10;
+					if (T >= scroll.clientHeight - scrollBtn.offsetHeight) {
+						T = scroll.clientHeight - scrollBtn.offsetHeight
+					}
+					var scale = T / (scroll.clientHeight - scrollBtn.offsetHeight);
+					scrollBtn.style.top = T + "px";
+					ul.style.top = -scale * (wrap.scrollHeight - wrap.clientHeight) + "px";
+				})
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="scroll">
+				<div id="scrollBtn"></div>
+			</div>
+			<ul>
+				<li>开始</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>12234432</li>
+				<li>结束</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

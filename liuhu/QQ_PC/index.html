@@ -1,0 +1,865 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QQ音乐-听我想听的歌！</title>
+<script src="js/html5shiv.min.js"></script>
+<style>
+body,p,h1,h2,h3,ul,dl,dd{ margin:0; padding:0;}
+input{ margin:0; padding:0; border:none; outline:none;}
+mark{ background:none;}
+body{ font:12px "宋体";}
+a{ text-decoration:none;}
+li{ list-style:none;}
+img{ border:none; vertical-align:top;}
+.clear{ zoom:1;}
+.clear:after{ content:""; display:block; clear:both;}
+.header1{ padding:7px 0 7px 763px; background:#2f2f2f; height:16px;}
+.header1 a{ display:inline-block; color:#b5b5b5; padding:0 10px 0 4px; border-right:1px solid #3d3d3d; line-height:16px;}
+.header1 a:hover{ color:#0dad43;}
+.header1 .a1{ padding-left:26px; position:relative;}
+.header1 .a1 span{ position:absolute; left:11px; top:3px; width:13px; height:10px; background:url(img/BG.png) no-repeat; overflow:hidden;}
+.header1 span{ color:#8b8b74;}
+.header2{ height:113px; border-bottom:1px solid #dddddd; padding-left:190px;}
+.header2 h1{ float:left; background: url(img/BG.png) no-repeat -13px 0; width:183px; height:0; padding-top:54px; overflow:hidden; margin-top:31px;}
+.header2 .right{ float:left; padding-left:57px;}
+.header2 .nav1{ float:left; line-height:38px; font-size:14px; }
+.header2 .nav1 a{ float:left;}
+.header2 .nav1 .a2{ background:url(img/BG.png) no-repeat -196px 0; width:88px; height:0; padding-top:75px; overflow:hidden;}
+.header2 .nav1 .a3{ width:26px; height:69px;border-top:6px solid #fff; padding:0 17px; margin:0 8px;}
+.header2 .nav1 .span3{ float:left;background:url(img/BG.png) no-repeat -284px 0; width:26px;height:0;padding-top:14px; overflow:hidden; margin-top:43px;}
+.header2 .nav1 .a3:hover{ border-color:#0dad51;}
+.header2 .nav1 .a4{ width:64px; height:69px;border-top:6px solid #fff; padding:0 10px;}
+.header2 .nav1 .span4{ float:left;background:url(img/BG.png) no-repeat -310px 0; width:64px;height:0;padding-top:16px; overflow:hidden; margin-top:43px;}
+.header2 .nav1 .a4:hover{ border-color:#0dad51;}
+.header2 .nav1 .a5{ width:80px; height:69px;border-top:6px solid #fff; padding:0 14px; margin:0 10px;}
+.header2 .nav1 .span5{ float:left;background:url(img/BG.png) no-repeat -374px 0; width:80px;height:0;padding-top:16px; overflow:hidden; margin-top:43px;}
+.header2 .nav1 .a5:hover{ border-color:#0dad51;}
+.header2 .img{ float:left; width:220px; height:31px; border:4px solid #f0f0f0;margin:38px 0 0 115px; border-radius:7px; position:relative; display:inline;}
+.header2 .img input{ float:left;}
+.header2 .img .text{ width:208px; height:29px; border:1px solid #c3c3c3; border-radius:3px; padding-left:10px; color:#c3c3c3; line-height:30px;}
+.header2 .img .submit{ position:absolute; width:13px; height:12px; background:url(img/BG.png) no-repeat -255px -75px; top:10px;right:11px;}
+.header2 .bottom{ line-height:38px; word-spacing:8px; padding-left:22px; color:#dcc5dc;}
+.header2 .bottom a{ color:#6e6e6e;font-family:14px "微软雅黑";}
+.header2 .bottom .first{ color:#0dad51;}
+.header2 .bottom a:hover{ color:#444;}
+.content{ width:960px; margin:0 auto; padding-bottom:119px;}
+.content .contentL{ float:left; width:720px;}
+.singer{ padding-top:20px; position:relative; width:700px; height:280px;}
+.singer img{ width:700px; height:280px;}
+.singer .yuan{ width:186px; height:10px; position:absolute; bottom:12px; left:257px; opacity:.6; filter:alpha(opacity=60);}
+.singer .yuan a{ float:left; width:10px; height:10px; margin-left:10px; background:url(img/BG.png) no-repeat 0 -10px;}
+.singer .yuan a:hover{  background:url(img/BG.png) no-repeat 0 -20px;}
+.publish{ height:328px;padding:40px 0 0 0;}
+.publish header{ height:30px;}
+.publish header h2{float:left; background:url(img/BG.png) no-repeat 0 -54px; width:125px; height:0; padding-top:30px; overflow:hidden;}
+.publish header .a1{ float:left; width:36px; height:0; padding-top:14px; background:url(img/BG.png) no-repeat -454px 0; overflow:hidden;margin:13px 0 2px 10px;}
+.publish header .a2{ float:right; width:32px; height:32px; background:url(img/BG.png) no-repeat -316px -16px; margin-right:20px; overflow:hidden;}
+.publish header .a2:hover{ background:url(img/BG.png) no-repeat -348px -16px;}
+.publish header .a3{ float:right; width:32px; height:32px;  background:url(img/BG.png) no-repeat -284px -16px;}
+.content1{ height:280px; padding-top:18px;}
+.content1 li{ float:left; width:130px; margin:0 12px 10px 0; position:relative; display:inline;}
+.content1 .mask{ width:100%; height:48px;  background:#000; opacity:.6; filter:alpha(opacity=60); position:absolute; left:0; bottom:0;}
+.content1 .word1{ line-height:12px; width:100%; height:12px; color:#0cc65b; position:absolute; left:6px; bottom:28px;}
+.content1 .word2{ line-height:12px; width:100%; height:12px; color:#fff; position:absolute; left:6px; bottom:5px;}
+.play{ height:398px; padding-top:28px;}
+.play header{ height:30px;}
+.play header h2{float:left; background:url(img/BG.png) no-repeat 0 -84px; width:107px; height:0; padding-top:30px; overflow:hidden;}
+.play header a{float:left;float:left; width:36px; height:0; padding-top:14px;  background:url(img/BG.png) no-repeat -454px 0; overflow:hidden;margin:13px 0 2px 10px;}
+.content2{ height:368px;}
+.content2 li{ float:left; width:160px; margin:18px 20px 0 0; display:inline;}
+.content2 .img{ position:relative;}
+.content2 .img img{ width:160px; height:90px;}
+.content2 .ico{ width:32px; height:21px; background:url(img/BG.png) no-repeat -490px 0; position:absolute; top:0; right:9px;}
+.content2 .text{ line-height:26px; padding-top:4px; letter-spacing:-1px; font-family:Arial, Helvetica, sans-serif;}
+.content2 .song{ color:#438f8f;}
+.content2 .song:hover{ color:#05b600;}
+.content2 .singer1{ color:#515151;}
+.content2 .singer1:hover{ color:#333;}
+.content2 .explain{ line-height:20px; color:#a3a3a3;}
+.content2 .number{ line-height:26px; color:#c8a3c8; height:26px; position: relative;}
+.content2 .number .span2{ margin-left:15px;}
+.content2 .number .span1{ position:absolute; background:url(img/BG.png) no-repeat -522px 0; left:0; top:7px; width:9px; height:11px;}
+.content2 .number mark{color:#a3a3a3; margin-left:55px;}
+.songlist{ padding-top:28px;}
+.songlist .songL{ float:left; width:350px;}
+.songlist header{ height:30px; overflow:hidden;}
+.songlist header h2{ float:left; width:126px; height:0; background: url(img/BG.png) no-repeat 0 -114px; padding-top:30px; overflow:hidden;}
+.songlist .bg1{ background:url(img/BG.png) no-repeat 0 -144px;}
+.songlist .circle{ float:left; height:30px;}
+.songlist header .play{ float:left; width:30px; height:30px; background:url(img/BG.png) no-repeat -380px -16px; margin-left:8px;}
+.songlist header .play:hover{ background-position:-531px 0;}
+.songlist header .add{ float:left; width:30px; height:30px;background:url(img/BG.png) no-repeat -410px -16px; margin-left:10px;}
+.songlist header .add:hover{ background-position:-561px 0;}
+.songlist header nav{ float:right; line-height:30px; margin-right:17px; display:inline;}
+.songlist nav a{ color:#0c8f44;}
+.songlist nav a:hover{color:#05b600;}
+.songlist nav .color1{ color:#333; font-weight:bold;}
+.content3{ padding-top:11px;}
+.content3 li{ height:36px; line-height:36px;}
+.content3 .song{ color:#0c8f44;}
+.content3 .song:hover{color:#5ab600;}
+.content3 .singer{ color:#515151;}
+.songlist .songR{ float:left;}
+.select{ padding-top:14px;}
+.select header{ height:30px;}
+.select header h2{ float:left; width:96px; height:0; padding-top:30px; background: url(img/BG.png) no-repeat 0 -174px; overflow:hidden;}
+.content4{ padding-top:18px;}
+.content4 .left{ width:270px; float:left;}
+.content4 .left img{ width:270px; height:270px;}
+.content4 .left a{ color:#0c8f44;}
+.content4 a:hover{color:#05b600;}
+.content4 .left strong{ display:block; line-height:24px; font-weight:normal;}
+.content4 .left p{ line-height:26px; color:#8b8b8b;}
+.content4 .right{ float:left; margin-left:15px;}
+.content4 li{ width:130px; float:left; margin-right:12px; display:inline;}
+.content4 .rightTop{margin-bottom:26px;}
+.content4 .right a{color:#0c8f44;}
+.content4 .right a:hover{color:#05b600;}
+.content4 .right strong{ display:block; line-height:30px; font-weight:normal;}
+.contentR{ float:left; width:220px; margin-left:20px; display:inline;}
+.find{ height:155px; border-bottom:1px solid #e4e4e4;}
+.find h1{float:left; background:url(img/BG.png) no-repeat 0 -204px;; width:220px; height:0; padding-top:30px; overflow:hidden; margin-top:21px; margin-bottom:25px;}
+.find .pic1{ margin-left: 25px;}
+.toppk{ position:relative; width:220px; height:88px;padding-top:20px;}
+.toppk .round{ width:60px; height:7px; position:absolute;left:80px; top:114px; overflow:hidden;}
+.toppk .round a{ float:left; margin:0 4px; background:url(img/BG.png) no-repeat 0 -30px; width:7px;height:7px;}
+.toppk .round a:hover{ background-position:0 -37px;}
+.listTop{ padding-top:18px; padding-bottom:16px; background:url(img/bg15.gif) repeat-x bottom;}
+.listTop .header3{ height:30px; overflow:hidden;padding-top:20px;}
+.listTop .header3 h2{float:left; width:55px; height:0; background: url(img/BG.png) no-repeat -125px -54px; padding-top:18px; overflow:hidden; margin-top:7px;}
+.listTop .circle{ float:left; height:30px;}
+.listTop header .play{ float:left; width:30px; height:30px; background:url(img/BG.png) no-repeat -380px -16px; margin-left:11px;}
+.listTop header .play:hover{background-position: -531px 0;}
+.listTop header .add{ float:left; width:30px; height:30px; background:url(img/BG.png) no-repeat -410px -16px; margin-left:10px;}
+.listTop header .add:hover{background-position:-561px 0;}
+.listTop  nav{ height:40px; line-height:40px; padding-bottom:5px; color:#d8d8d8;}
+.listTop  nav a{ color:#0c8f44;}
+.listTop  nav a:hover{ color:#05b600;}
+.listTop  nav .color2{ color:#333; font-weight:bold;}
+.content5 li{ height:24px; line-height:24px;}
+.content5 .li2{ height:50px;}
+.content5 .li2 .song{ margin-left:11px;}
+.content5 .li2 .img1{ float:left; margin-left:11px; margin-right:30px;}
+.content5 .li2 .singer1{margin-left:13px;}
+.content5 span{ float:left;color:#9c9d9e;}
+.content5 .song{ float:left; margin-left:29px; color:#0c8f44;}
+.content5 .song:hover{ color:#05b600;}
+.content5 .singer1{ float:right; color:#515151;}
+.content5 .singer1:hover{ color:#333;}
+.listMusic{ height:72px;padding:13px 0 14px 0;border-bottom:1px solid #e4e4e4; line-height:24px;}
+.listMusic div{ float:left; width:80px;}
+.listMusic a{ display:block; color:#515151;}
+.listMusic .listMusic1{ width:60px;}
+.singer2 header{ height:17px; padding:27px 0 9px 0;}
+.singer2 header h2{float:left; width:72px; height:0; padding-top:17px; background: url(img/BG.png) no-repeat -125px -75px; overflow:hidden;}
+.singer2 header a{ float:left;float:left; width:36px; height:0; padding-top:14px; background:url(img/BG.png) no-repeat -454px 0; overflow:hidden; margin:3px 0 0 9px;}
+.listSinger{ padding-bottom:9px; background:url(img/bg21.gif) repeat-x bottom;}
+.listSinger li{ float:left; width:50px; margin-right:34px; padding-top:10px; display:inline;}
+.listSinger .li1{ margin-right:2px;}
+.listSinger li img{ width:50px; height:50px;}
+.listSinger li a{ color:#0c8f44;}
+.listSinger li a:hover{color:#05b600;}
+.listSinger strong{ display:block;line-height:30px;font-weight:normal;}
+.singer3{ padding:13px 0 15px 0;border-bottom:1px solid #e4e4e4; line-height:24px; word-spacing:20px;}
+.singer3 a{ color:#515151;}
+.activity{ padding:20px 0; border-bottom:1px solid #e4e4e4;}
+.activity header{ height:17px; padding-bottom:13px;}
+.activity header h2{float:left; width:72px; height:0; padding-top:17px;background:url(img/BG.png) no-repeat -125px -92px; overflow:hidden;}
+.activity li{ width:220px; padding-top:7px;}
+.activity li img{ width:220px; height:88px;}
+.activity li strong{ display:block; color:#0c8f44; line-height:24px;}
+.footer{ height:108px; padding:30px 0 49px 252px; background:#f7f7f7; line-height:26px;}
+.footer dl{ float:left;}
+.footer h3{ color:#757575; font-size:16px;}
+.footer dd{ word-spacing:15px;}
+.footer dd a{ color:#666;}
+.footL{ width:356px;}
+.footC{ width:204px;}
+.footer a:hover{ color:#444;}
+aside{height:73px; background:#f7f7f7; text-align:center; line-height:26px; color:666;}
+aside a{ color:#666;}
+aside a:hover{ color:#444;}
+.fixed1{ position:fixed;width:24px;height:116px;_position:absolute;left:0;top:500px;_top:expression(eval(document.documentElement.scrollTop + 500));_display:none;}
+.fixed2{ position:fixed; width:29px;height:88px; border:1px solid #cdcdcd; border-radius:6px;padding:9px;_position:absolute;right:31px;top:360px;_top:expression(eval(document.documentElement.scrollTop + 360));
+_right:expression(eval(document.documentElement.scrollRight + 31));_display:none;}
+.fixed2 .a5{ display:block; width:29px;height:15px;margin-bottom:17px; background: url(img/BG.png) no-repeat -126px -114px;}
+.fixed2 .a5:hover{background-position:-155px -114px;}
+.fixed2 .a6{ display:block; width:29px;height:27px;padding-bottom:15px; background: url(img/BG.png) no-repeat -197px -75px;}
+.fixed2 .a6:hover{background-position:-226px -75px;}
+.fixed2 .a7{ display:block; width:29px;height:16px;background: url(img/BG.png) no-repeat -126px -129px;}
+.fixed2 .a7:hover{background-position:-155px -129px;}
+</style>
+</head>
+
+<body>	
+	<header class="header1">
+    	<span>你还未登陆，</span><a href="#">马上登陆</a>
+        <a href="#" class="a1">绿钻<span></span></a>
+        <a href="#">全民K歌</a>
+        <a href="#">QQ演出</a>
+        <a href="#">Qplay</a>
+    </header>
+    <header class="header2">
+  		<h1>QQ音乐</h1>
+        <div class="right">
+        	<div class="top clear">
+                <nav class="nav1">
+                    <a href="#" class="a2">音乐馆</a>
+                    <a href="#" class="a3">
+                    	<span class="span3">MV</span>
+                    </a>
+                    <a href="#" class="a4">
+                    	<span class="span4">我的音乐</span>
+                    </a>
+                    <a href="#" class="a5">
+                    	<span class="span5">下载客户端</span>
+                    </a>
+                </nav>
+                <div class="img">
+                	<input class="text" type="text" value="找到好音乐" />
+                    <div class="subm">
+                    <input class="submit" type="submit" value=""/>
+                    </div>
+                </div>
+            </div>
+            <nav class="bottom">
+                <a href="#" class="first">首页</a> 丨
+                <a href="#">排行榜</a> 丨
+                <a href="#">歌单广场</a> 丨
+                <a href="#">电台</a> 丨
+                <a href="#">歌手</a> 丨
+                <a href="#">独家首发</a> 丨
+                <a href="#">专辑</a>
+            </nav>
+         </div>
+    </header>
+    <section class="content clear">
+    	<section class="contentL">
+        	<section class="singer">
+            	<a href="#">
+                	<img src="img/img1.gif" alt=""/>
+                </a>
+                <div class="yuan">
+                    <a href="#"></a>
+                   	<a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </section>
+            <section class="publish">
+            	<header>
+                	<h2>在线首发</h2>
+                    <a href="#" class="a1">/更多</a>
+                    <a href="#" class="a2"></a>
+                    <a href="#" class="a3"></a>
+                </header>
+                <ul class="content1">
+                    <li>
+                        <a href="#">
+                            <img src="img/img2.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">冬 未了</span>							 <span class="word2">苏打绿</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img3.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">隐藏的歌手 第四期</span>					<span class="word2">隐藏的歌手</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img4.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">新的心跳</span>					<span class="word2">G.E.M.邓紫棋</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img5.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">再见少年</span>					<span class="word2">王矜霖</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img6.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">三级跳之Hop</span>					<span class="word2">孙子涵</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img7.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">in the Lonely Hou…</span>					<span class="word2">Sam Smith</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img8.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">Get Weird(Deluxe)</span>					<span class="word2">Little Mix</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img9.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">Delirium(Deluxe)</span>					<span class="word2">Ellie Goulding</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img10.gif" alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">第二季QQ音乐巅省略号</span>					<span class="word2">QQ音乐</span>
+                        </a>
+                   	</li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img11.gif"alt=""/>
+                            <span class="mask"></span>
+                            <span class="word1">迷藏</span>					<span class="word2">梁博</span>
+                        </a>
+                   	</li>
+                </ul>
+            </section>
+            <section class="play">
+            	<header>
+                	<h2>MV首播</h2>
+                    <a href="#">/更多</a>
+                </header>
+                <ul class="content2">
+                	<li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic1.gif" alt=""/>
+                            <span class="ico"></span>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">Just Do It Now</a><a href="#" class="singer1">-SEIKIN</a>
+                        </div>
+                        <p class="explain">YouTube人气红人出道了惹</p>
+                        <p class="number">
+                        	<span class="span1"></span>
+                            <span class="span2">0</span>
+                            <mark>2015-11-09</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic2.gif" alt=""/>
+                            <span class="ico"></span>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">Love Me Like Like You Do</a><a href="#" class="singer1">-Ellie…</a>
+                        </div>
+                        <p class="explain">钢琴弦乐版《五十度灰》主…</p>
+                        <p class="number">
+                            <span class="span1"></span>
+                            <span class="span2">0</span>
+                            <mark>2015-11-09</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic3.gif" alt=""/>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">So I Could Find My Way</a><a href="#" class="singer1">-E…</a>
+                        </div>
+                        <p class="explain">不老女神永恒的天籁之音</p>
+                        <p class="number">
+                            <span class="span1"></span>
+                            <span class="span2">1213</span>
+                            <mark>2015-11-07</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic4.gif" alt=""/>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song"> Bang My Head</a><a href="#" class="singer1">-David Guetta</a>
+                        </div>
+                        <p class="explain">大片既视感的极品之作</p>
+                        <p class="number">
+                          <span class="span1"></span>
+                          <span class="span2">0</span>
+                          <mark>2015-11-06</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic5.gif" alt=""/>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">Lay It All On Me</a><a href="#" class="singer1">-Rudimental</a>
+                        </div>
+                            <p class="explain">记录下众人的生活百态</p>
+                            <p class="number">
+                         	<span class="span1"></span>
+                            <span class="span2">1008</span>
+                        <mark>2015-11-06</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic6.gif" alt=""/>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">美女与野兽</a><a href="#" class="singer1">-May J.</a>
+                        </div>
+                        <p class="explain">的天籁之音不能再美</p>
+                        <p class="number">
+                            <span class="span1"></span>
+                            <span class="span2">0</span>
+                            <mark>2015-11-08</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic7.gif" alt=""/>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">美丽狩猎</a><a href="#" class="singer1">-AKB Team Su…</a>
+                        </div>
+                        <p class="explain">惊喜小分队回归啦</p>
+                        <p class="number">
+                           	<span class="span1"></span>
+                            <span class="span2">0</span>
+                            <mark>2015-11-07</mark>
+                        </p>
+                    </li>
+                    <li>
+                    	<a href="#" class="img">
+                        	<img src="img/pic8.gif" alt=""/>
+                        </a>
+                        <div class="text">
+                            <a href="#" class="song">韩语韩语韩语	</a><a href="#" class="singer1">-F.CUZ</a>
+                        </div>
+                        <p class="explain">《Missing Korea》主题曲</p>
+                        <p class="number">
+                            <span class="span1"></span>
+                            <span class="span2">0</span>
+                            <mark>2015-11-06</mark>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="songlist clear">
+            	<section class="songL">
+                	<header>
+                    	<h2>最新推荐</h2>
+                        <div class="circle">
+                            <a href="#" class="play" title="播放"></a>
+                            <a href="#" class="add" title="添加"></a>
+                        </div>
+                        <nav>
+                        	<a href="#" class="color1">华语</a>丨<a href="#">韩语</a>丨<a href="#">欧美</a>
+                        </nav>
+                    </header>
+                    <ul class="content3">
+                    	<li>
+                        	<a href="#" class="song">我是你的Lover</a>-<a href="#" class="singer">吴莫愁</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">查克靠近</a>-<a href="#" class="singer">.G.E.M邓…</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">我们不懂</a>-<a href="#" class="singer">苏打绿</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">远在眼前的你</a>-<a href="#" class="singer">王心凌</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">诺言</a>-<a href="#" class="singer">鹿晗</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">葡萄</a>-<a href="#" class="singer">韩红</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">满</a>-<a href="#" class="singer">汪峰</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">山河故人（《山河故人》电影同名…</a>-<a href="#" class="singer">李宇春</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">让</a>-<a href="#" class="singer">萧煌奇</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">一次就好（《夏洛特》电影暖…</a>-<a href="#" class="singer">杨宗纬</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">只要有你的地方（《消失的爱人》省略号</a>-<a href="#" class="singer">林俊杰</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">奇迹</a>-<a href="#" class="singer">李琦</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="songR">
+                	<header>
+                    	<h2 class="bg1">最热推荐</h2>
+                        <div class="circle">
+                            <a href="#" class="play" title="添加"></a>
+                            <a href="#" class="add" title="播放"></a>
+                        </div>
+                    </header>
+                    <ul class="content3">
+                    	<li>
+                        	<a href="#" class="song">年轮（《花千骨》电视剧插曲）</a>-<a href="#" class="singer">张碧晨</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">不可说（《花千骨》电视剧主题曲）</a>-<a href="#" class="singer">霍建华</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">千古（《花千骨》电视剧片头曲）</a>-<a href="#" class="singer">阿兰</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">剩下的盛夏</a>-<a href="#" class="singer">TFBOYS</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">心之火（《花千骨》电视剧片头曲）</a>-<a href="#" class="singer">飞儿乐团</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">大梦想家</a>-<a href="#" class="singer">TFBOYS</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">给我的快乐（《神犬小七》电视剧…）</a>-<a href="#" class="singer">胡夏</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">我愿意（克拉恋人》电视剧片尾…）</a>-<a href="#" class="singer">严艺丹</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">神曲神曲唱起来</a>-<a href="#" class="singer">范玉刚</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">年轮（《花千骨》电视剧插曲）</a>-<a href="#" class="singer">汪苏泷</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">新的心跳（《极速前进第二季》…</a>-<a href="#" class="singer">…</a>
+                        </li>
+                        <li>
+                        	<a href="#" class="song">清风徐来（《港囧》电视剧主题曲丨…</a>-<a href="#" class="singer">王菲</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section class="select">
+            	<header>
+                	<h2>精选集</h2>
+                </header>
+                <section class="content4 clear">
+                	<div class="left">
+                    	<a href="#">
+                        	<img src="img/img13.gif" alt=""/>
+                            <strong>MV精选</strong>
+                        </a>
+                        <p>音乐抚慰青春之痛，追忆那时的蜜语甜言。</p>
+                    </div>
+                    <div class="right">
+                    <ul class="rightTop clear">
+                    	<li>
+                        	<a href="#">
+                            	<img src="img/img14.gif" alt=""/>
+                                <strong>相恋跨越时空</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/img15.gif" alt=""/>
+                                <strong>一支独秀更耀眼</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/img16.gif" alt=""/>
+                                <strong>音乐和短裙最配</strong>
+                            </a>
+                        </li>
+                     </ul>
+                     <ul class="rightBottom clear">
+                        <li>
+                        	<a href="#">
+                            	<img src="img/img17.gif" alt=""/>
+                                <strong>音乐时尚两不误</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/img18.gif" alt=""/>
+                                <strong>好的歌手会搞怪</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/img19.gif" alt=""/>
+                                <strong>静享一曲中国风</strong>
+                            </a>
+                        </li>
+                    </ul>
+                   </div> 
+                </section>
+            </section>
+        </section>
+        <section class="contentR">
+        	<section class="find">
+            	<h1>发现更多好音乐</h1>
+                <a href="#" class="pic1">
+                	<img src="img/pic9.gif" alt=""/>
+                </a>
+            </section>
+            <section class="toppk">
+            	<a herf="#" class="music">
+                	<img src="img/pic10.gif" alt=""/>
+                </a>
+                <div class="round">
+                	<a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </section>
+            <section class="listTop">
+                	<header class="header3">
+                    	<h2>巅峰榜</h2>
+                        <div class="circle">
+                            <a href="#" class="play" title="添加"></a>
+                            <a href="#" class="add" titlt="播放"></a>
+                        </div>
+  					</header>
+                        <nav>
+                        	<a href="#" class="color2">流行指数</a>丨<a href="#">内地</a>丨<a href="#">港台</a>丨<a href="#">欧美</a>丨<a href="#">韩国</a>
+                        </nav>
+                    <ul class="content5">
+                    	<li class="li2">
+                        	<span><img src="img/pic13.gif"/></span>
+                        	<a href="#" class="song">
+                            	<img src="img/pic12.gif" alt=""/>
+                            </a>
+                            <a href="#" class="img1">
+                            	<img src="img/pic14.gif" alt=""/>
+                            </a>
+                            <a href="#" class="singer1">G.E.M邓…</a>
+                        </li>
+                    	<li>
+                        	<span>02</span>
+                        	<a href="#" class="song">Bad Girl</a>
+                            <a href="#" class="singer1">吴亦凡</a>
+                        </li>
+                       	<li>
+                        	<span>03</span>
+                        	<a href="#" class="song">盲点</a>
+                            <a href="#" class="singer1">G.E.M邓…</a>
+                        </li>
+                        <li>
+                        	<span>04</span>
+                        	<a href="#" class="song">他们说（《龙门镖…》</a>
+                            <a href="#" class="singer1">张靓颖</a>
+                        </li>
+                        <li>
+                        	<span>05</span>
+                        	<a href="#" class="song">壁咚（未完成）</a>
+                            <a href="#" class="singer1">孙子涵</a>
+                        </li>
+                        <li>
+                        	<span>06</span>
+                        	<a href="#" class="song">I’ll Show You</a>
+                            <a href="#" class="singer1">Justin Bie…</a>
+                        </li>
+                        <li>
+                        	<span>07</span>
+                        	<a href="#" class="song">青春快乐（《从天…</a>
+                            <a href="#" class="singer1">张艺兴</a>
+                        </li>
+                        <li>
+                        	<span>08</span>
+                        	<a href="#" class="song">痛快的哀艳</a>
+                            <a href="#" class="singer1">苏打绿</a>
+                        </li>
+                        <li>
+                        	<span>09</span>
+                        	<a href="#" class="song">远在眼前的你</a>
+                            <a href="#" class="singer1">王心凌</a>
+                        </li>
+                        <li>
+                        	<span>10</span>
+                        	<a href="#" class="song">陪你长大（《三个…</a>
+                            <a href="#" class="singer1">田雷</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="listMusic">
+                	<div>
+                    <a href="#">iTunes榜</a>
+                    <a href="#">Chanane[V]</a>
+                    <a href="#">英国UK榜</a>
+                    </div>
+                    <div>
+                    <a href="#">美国公告榜</a>
+                    <a href="#">日本公信榜</a>
+                    <a href="#">香港电台榜</a>
+                    </div>
+                    <div class="listMusic1">
+                    <a href="#">英国UK榜</a>
+                    <a href="#">韩国MNET</a>
+                    <a href="#">MTV光荣榜</a>
+                    </div>
+                </section>
+                <section class="singer2">
+                	<header>
+                    	<h2>热门歌手</h2>
+                        <a href="#">/更多</a>
+                    </header>
+                    <ul class="listSinger clear">
+                    	<li>
+                        	<a href="#">
+                            	<img src="img/pic15.gif" alt=""/>
+                                <strong>G.E.M…</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/pic16.gif" alt=""/>
+                                <strong>周杰伦</strong>
+                            </a>
+                        </li>
+                        <li class="li1">
+                        	<a href="#">
+                            	<img src="img/pic17.gif" alt=""/>
+                                <strong>BIG BA…</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/pic18.gif" alt=""/>
+                                <strong>陈奕迅</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/pic19.gif" alt=""/>
+                                <strong>林俊杰</strong>
+                            </a>
+                        </li>
+                        <li class="li1">
+                        	<a href="#">
+                            	<img src="img/pic20.gif" alt=""/>
+                                <strong>鹿晗</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="singer3">
+                	<a href="#">华语男歌手</a>
+                    <a href="#">华语女歌手</a>
+                    <a href="#">华语组合</a>
+                    <a href="#">日韩男歌手</a>
+                    <a href="#">日韩女歌手</a>
+                    <a href="#">日韩组合</a>
+                    <a href="#">欧美男歌手</a>
+                    <a href="#">欧美女歌手</a>
+                    <a href="#">欧美组合</a>
+                </section>
+                <section class="activity">
+                	<header>
+                    	<h2>精彩活动</h2>
+                    </header>
+                    <ul class="content6">
+                    	<li>
+                        	<a href="#">
+                            	<img src="img/pic21.gif" alt=""/>
+                                <strong>[精彩活动]友情岁月深圳站</strong>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href="#">
+                            	<img src="img/pic22.gif" alt=""/>
+                                <strong>[精彩活动]巅峰对决第四期</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+        </section>
+    </section>
+    <footer class="footer">
+        <dl class="footL">
+        	<dt>
+            	<h3>软件下载</h3>
+            </dt>
+            <dd>
+                <a href="#">PC版</a>
+                <a href="#">iphone客户端</a>
+                <a href="#">ipad客户端</a>
+            </dd>
+            <dd>
+                <a href="#">MAC版</a>
+                <a href="#">Android客户端</a>
+                <a href="#">Android Pad客户端</a>
+            </dd>
+            <dd>
+                <a href="#">Windows8版</a>
+                <a href="#">Windows phone版</a>
+            </dd>
+        </dl>
+        <dl class="footC">
+        	 <dt>
+        	 	<h3>特色产品</h3>
+             </dt>
+             <dd>
+        	 	<a href="#">车载互联</a>
+             </dd>
+             <dd>
+             	<a href="#">Qplay</a>
+             </dd>
+             <dd>
+             	<a href="#">QQ音乐原创音乐平台</a>
+             </dd>
+        </dl>
+         <dl class="footL">
+         	<dt>
+        		<h3>友情链接</h3>
+            </dt>
+            <dd>
+                <a href="#">手机QQ空间</a>
+                <a href="#">最新版QQ</a>
+                <a href="#">腾讯视频</a>
+                <a href="#">电脑管家</a>
+            </dd>
+            <dd>
+                <a href="#">QQ浏览器</a>
+                <a href="#">兴趣部落</a>
+                <a href="#">腾讯云论坛</a>
+            </dd>
+        </dl>
+    </footer>
+    <aside>
+    	<div>
+        	<a href="#">关于腾讯</a>丨<a href="#">About Tencent</a>丨<a href="#">服务条款</a>丨<a href="#">用户服务协议</a>丨<a href="#">广告服务</a>丨<a href="#">腾讯招聘</a>丨<a href="#">客服中心</a>丨<a href="#">网站导航</a>
+        </div>
+        <div>
+        	<a href="#">Copyright@1998-2015Tencent.All Rights Reserved.</a>
+        </div>
+        <div>
+        	<a href="#">腾讯公司</a>
+            <a href="#">版权所有</a>
+            <a href="#">腾讯网络文化经营许可证</a>
+        </div>
+    </aside>
+    <a href="#" class="fixed1">
+    	<img src="img/pic23.gif" alt=""/>
+    </a>
+    <div class="fixed2">
+    	<a href="#" class="a5"></a>
+        <a href="#" class="a6"></a>
+        <a href="#" class="a7"></a>
+    </div>
+</body>
+</html>

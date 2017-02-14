@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+@-webkit-keyframes move
+{
+	0%{left:0;top:0;}
+	100%{left:-500px;top:0;}
+}
+body,ul{ margin:0;padding:0;}
+li{list-style:none;}
+.wrap{width:500px;height:100px;border:5px solid #000;position:relative;margin:50px auto;overflow:hidden;}
+ul{position:absolute;left:0;top:0;height:100px;animation:2s move infinite linear;width:200%;}
+li{background:#000;width:98px;height:98px;border:1px solid #fff;float:left;color:#fff;line-height:98px;text-align:center;font-size:40px;}
+ul:hover{animation-play-state:paused;}
+</style>
+</head>
+
+<body>
+	<div class="wrap">
+    	<ul>
+        	<li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p{margin: 0;padding: 0;}
+			img{vertical-align: top;}
+			#div1{width: 300px;border:5px solid #0000FF;position: relative;float: left;height: 187px;cursor:move}
+			#div1 p {background: red;position: absolute;left: 0;top: 0;opacity: .6;}
+			#div2{width: 300px;height: 187px;position: relative;border: 5px solid blue;overflow: hidden;float: left;margin-left: 100px;}
+			#div2 img{position: absolute;left: 0;top: 0;}
+		</style>
+		<script src="js/library.js"></script>
+		<script type="text/javascript">
+			window.onload = function (){
+				var div = document.getElementsByTagName('div');
+				var img = document.getElementsByTagName('img');
+				var p = document.getElementsByTagName('p')[0];
+				p.style.width  = (div[1].clientWidth)*(div[0].clientWidth) /(img[1].offsetWidth) + 'px';
+				p.style.height = (div[1].clientHeight)*(div[0].clientHeight) /(img[1].offsetHeight) + 'px';
+				div[0].onmousemove = function (ev){
+				  	var e = ev || event ;
+				  	var n = (img[1].offsetWidth - div[1].clientWidth)/(div[0].clientWidth - p.offsetWidth);
+				  	var l  = e.clientX - p.offsetWidth/2 ;
+				  	var t  = e.clientY  - p.offsetHeight/2 ;
+				  	var l1 = div[0].clientWidth -  p.offsetWidth;
+				  	var t1 = div[0].clientHeight -  p.offsetHeight;
+				  	p.style.left = l+ 'px';
+				  	img[1].style.left = -l*n + 'px' 
+				  	if(l< 0){
+						p.style.left=0;
+						img[1].style.left = 0;
+					}
+					if(l> l1){
+						p.style.left = l1 + 'px';
+						img[1].style.left = -n*(l1) + 'px';
+					}
+					p.style.top =  t+ 'px';
+					img[1].style.top= -(t)*n+ 'px' 
+					if(t < 0){
+						p.style.top=0;
+						img[1].style.top = 0;
+					}
+					if(t > t1 ){
+						p.style.top = t1+ 'px';
+						img[1].style.top = -n*(t1)+ 'px';;
+					}
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<p></p>
+			<img src="img-js/1.jpg" alt="" />
+		</div>
+		<div id="div2">
+			<img src="img-js/2.jpg" alt="" />
+		</div>
+	</body>
+</html>
